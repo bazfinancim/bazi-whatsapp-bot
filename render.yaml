@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bazi-whatsapp-baileys
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: N8N_WEBHOOK
+        value: https://n8n-service-dwl2.onrender.com/webhook/bazi054
+      - key: PORT
+        value: 3000
+    disk:
+      name: auth-data
+      mountPath: /opt/render/project/src/auth_info
+      sizeGB: 1
